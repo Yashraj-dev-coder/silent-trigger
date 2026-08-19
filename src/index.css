@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-navy-950 text-navy-100 font-sans;
+  }
+  * {
+    @apply border-navy-800;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-navy-900/60 backdrop-blur-md border border-navy-800;
+  }
+  .glass-card {
+    @apply bg-navy-900/50 backdrop-blur-md border border-navy-800 rounded-xl;
+  }
+}
+
+/* Leaflet map dark theme */
+.leaflet-container {
+  background: #0d1b2a !important;
+  border-radius: 0.5rem;
+}
+.leaflet-tile {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+.leaflet-bar a {
+  background: #16263d !important;
+  color: #d9e2ec !important;
+  border-color: #243b53 !important;
+}
+.leaflet-bar a:hover {
+  background: #243b53 !important;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #16263d !important;
+  color: #d9e2ec !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1b2a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334e68;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #486581;
+}
+
+/* Audio waveform bars */
+.waveform-bar {
+  animation: wave 1.2s ease-in-out infinite;
+  transform-origin: bottom;
+}
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
